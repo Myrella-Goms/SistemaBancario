@@ -11,10 +11,11 @@ namespace SistemaBancario.Domain.Entities
         [Required]
         public string LastName { get; set; } = string.Empty;
         [Required]
-        public string DocumentNumber { get; set; } = string.Empty;
+        public DateOnly BirthDate { get; set; }
         [Required]
-        public DateOnly BirthDate { get; set; } 
-        [Required]
+        public string Phone { get; set; } = string.Empty;
+        [Required]  
+        public string Email { get; set; } = string.Empty;
         public DateTime CreatedAt { get; set; }
         public bool IsActive { get; set; }
     }
