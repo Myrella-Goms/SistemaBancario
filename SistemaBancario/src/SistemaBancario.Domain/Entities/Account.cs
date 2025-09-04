@@ -7,12 +7,11 @@ namespace SistemaBancario.Domain.Entities
     {
         public Guid AccountId { get; set; }
         [Required]
-        public string AccountNumber { get; set; }
+        public string AccountNumber { get; set; } = string.Empty;
         [Required]
-        public string Agency { get; set; }
-        public string Password { get; set; }
-        [Required]
-        public DateTime CreatedAt { get; set; }
-        public bool IsActive { get; set; }
+        public string Agency { get; set; } = string.Empty;
+        public string Password { get; set; } = string.Empty;
+        public DateTime CreatedAt { get; set; } = DateTime.Now;
+        public bool IsActive { get; set; } = true;
     }
 }

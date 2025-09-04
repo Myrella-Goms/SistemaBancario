@@ -9,17 +9,17 @@ namespace SistemaBancario.Domain.Entities
         [Required]
         public int Number { get; set; }
         [Required]
-        public string StreetName { get; set; }
+        public string StreetName { get; set; } = string.Empty;
         [Required]
-        public string Neighborhood { get; set; }
+        public string Neighborhood { get; set; } = string.Empty;
         [Required]
-        public string City { get; set; }
+        public string City { get; set; } = string.Empty;
         [Required]
-        public string State { get; set; }
+        public string State { get; set; } = string.Empty;
         [Required]
-        public string ZipCode { get; set; }
-        [Required]
-        public DateTime CreatedAt { get; set; }
-        public bool IsActive { get; set; }
+        public string ZipCode { get; set; } = string.Empty;
+        public string? Complement { get; set; }
+        public DateTime CreatedAt { get; set; } = DateTime.Now;
+        public bool IsActive { get; set; } = true;
     }
 }
