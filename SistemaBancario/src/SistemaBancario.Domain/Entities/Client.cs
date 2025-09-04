@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace SistemaBancario.Domain.Entities
 {
-    public class Client
+    public abstract class Client
     {
         public Guid ClientId { get; set; }
         [Required]

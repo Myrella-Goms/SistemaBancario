@@ -25,11 +25,4 @@ namespace SistemaBancario.Domain.Entities
         public virtual Account? Account { get; set; }
         public virtual Account? DestinationAccount { get; set; }
     }
-    public enum TransactionType
-    {
-        Deposit,
-        Withdrawal,
-        Transfer,
-        Interest 
-    }
 }
