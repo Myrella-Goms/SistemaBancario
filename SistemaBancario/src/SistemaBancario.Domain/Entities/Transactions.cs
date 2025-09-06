@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace SistemaBancario.Domain.Entities
 {
-    public class Transaction
+    public class Transactions
     {
         public Guid TransactionId { get; set; }
         
@@ -14,7 +14,7 @@ namespace SistemaBancario.Domain.Entities
         public decimal Amount { get; set; }
         
         [Required]
-        public TransactionType Type { get; set; }
+        public TransactionsEnums Type { get; set; }
         
         public string? Description { get; set; }
         

@@ -5,7 +5,7 @@ namespace SistemaBancario.Domain.Entities
 {
     public class AccountBalance
     {
-        public Guid BalanceId { get; set; }
+        public Guid AccountBalanceId { get; set; }
         
         [Required]
         public Guid AccountId { get; set; }
