@@ -4,14 +4,15 @@ namespace SistemaBancario.Domain.Enums
 {
     public enum TransactionType
     {
-        Deposit,    // Depósito
-        Withdrawal, // Saque
-        Transfer,   // Transferência
-        Pix,        // PIX
-        Ted,        // TED
-        Doc,        // DOC
-        Interest,   // Juros/Rendimento
-        Fee,        // Taxa
-        Payment     // Pagamento
+    Deposit,       
+    Withdrawal,     
+    Transfer,       
+    Pix,           
+    Ted,           
+    Doc,           
+    BankSlip,      
+    DebitCard,     
+    CreditCard,   
+    Payment       
     }
 }

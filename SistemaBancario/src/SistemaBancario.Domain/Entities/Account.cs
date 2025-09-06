@@ -21,6 +21,6 @@ namespace SistemaBancario.Domain.Entities
         public virtual AccountBalance? AccountBalance { get; set; }
         public virtual ICollection<Transactions> Transactions { get; set; } = new List<Transactions>();
         public virtual ICollection<Transactions> DestinationTransactions { get; set; } = new List<Transactions>();
-        public virtual ICollection<AccountPaymentMethod> AccountPaymentMethods { get; set; } = new List<AccountPaymentMethod>();
+  
     }
 }
