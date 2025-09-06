@@ -15,16 +15,13 @@ namespace SistemaBancario.Domain.Entities
 
         public bool IsEnabled { get; set; } = true;
 
-        public decimal? CustomFee { get; set; } // Taxa personalizada para esta conta
+        public decimal? CustomFee { get; set; } 
 
-        public decimal? CustomMinAmount { get; set; } // Limite mínimo personalizado
+        public decimal? CustomMinAmount { get; set; } 
 
-        public decimal? CustomMaxAmount { get; set; } // Limite máximo personalizado
+        public decimal? CustomMaxAmount { get; set; } 
 
         public DateTime EnabledAt { get; set; } = DateTime.Now;
-
-        // Relacionamentos de navegação
         public virtual Account Account { get; set; } = null!;
-        public virtual PaymentMethod PaymentMethod { get; set; } = null!;
     }
 }

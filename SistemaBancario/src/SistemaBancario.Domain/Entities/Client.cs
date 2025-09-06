@@ -19,11 +19,8 @@ namespace SistemaBancario.Domain.Entities
         public string Email { get; set; } = string.Empty;
         public DateTime CreatedAt { get; set; } = DateTime.Now;
         public bool IsActive { get; set; } = true;
-        // Relacionamento com Address (1:1)
         public Guid? AddressId { get; set; }
         public virtual Address? Address { get; set; }
-
-        // Relacionamento com Account (1:N)
         public virtual ICollection<Account> Accounts { get; set; } = new List<Account>();
     }
 }

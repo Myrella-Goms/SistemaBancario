@@ -23,12 +23,6 @@ namespace SistemaBancario.Domain.Entities
         public DateTime CreatedAt { get; set; } = DateTime.Now;
         
         public Guid? DestinationAccountId { get; set; }
-
-        // Relacionamento com PaymentMethod (N:1)
-        public Guid? PaymentMethodId { get; set; }
-        public virtual PaymentMethod? PaymentMethod { get; set; }
-
-        // Relacionamentos de navegação
         public virtual Account Account { get; set; } = null!;
         public virtual Account? DestinationAccount { get; set; }
     }

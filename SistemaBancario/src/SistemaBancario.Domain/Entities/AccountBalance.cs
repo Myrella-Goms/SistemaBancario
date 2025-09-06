@@ -19,8 +19,6 @@ namespace SistemaBancario.Domain.Entities
 
         [Required]
         public DateTime LastUpdated { get; set; } = DateTime.Now;
-        
-        // Navegação
         public virtual Account Account { get; set; } = null!;
     }
 }

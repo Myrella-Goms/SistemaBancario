@@ -9,6 +9,6 @@ namespace SistemaBancario.Domain.Entities
         public decimal ReferenceRate { get; set; }
         public decimal Selic { get; set; }
         public int MonthlyTransferCount { get; set; }
-        public int MaxMonthlyTransfers { get; set; } = 5; // Limite legal da poupança
+        public int MaxMonthlyTransfers { get; set; } = 5; 
     }
 }
