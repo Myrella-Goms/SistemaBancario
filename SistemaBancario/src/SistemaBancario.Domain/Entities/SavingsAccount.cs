@@ -2,11 +2,13 @@ using System;
 
 namespace SistemaBancario.Domain.Entities
 {
-    public class SavingAccount : Account
+    public class SavingsAccount : Account
     {
-        public double TransferLimit { get; set; }
-        public double Yield { get; set; }
-        public float ReferenceRate { get; set; }
-        public double Selic { get; set; }
+        public decimal TransferLimit { get; set; }
+        public decimal Yield { get; set; }
+        public decimal ReferenceRate { get; set; }
+        public decimal Selic { get; set; }
+        public int MonthlyTransferCount { get; set; }
+        public int MaxMonthlyTransfers { get; set; } = 5; // Limite legal da poupança
     }
 }

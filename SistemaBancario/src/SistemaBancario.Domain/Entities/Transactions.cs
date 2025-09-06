@@ -1,5 +1,6 @@
 using System;
 using System.ComponentModel.DataAnnotations;
+using SistemaBancario.Domain.Enums;
 
 namespace SistemaBancario.Domain.Entities
 {
@@ -14,15 +15,21 @@ namespace SistemaBancario.Domain.Entities
         public decimal Amount { get; set; }
         
         [Required]
-        public TransactionsEnums Type { get; set; }
+        public TransactionType Type { get; set; }
         
         public string? Description { get; set; }
         
         [Required]
-        public DateTime CreatedAt { get; set; }
+        public DateTime CreatedAt { get; set; } = DateTime.Now;
         
-        public Guid? DestinationAccountId { get; set; } 
-        public virtual Account? Account { get; set; }
+        public Guid? DestinationAccountId { get; set; }
+
+        // Relacionamento com PaymentMethod (N:1)
+        public Guid? PaymentMethodId { get; set; }
+        public virtual PaymentMethod? PaymentMethod { get; set; }
+
+        // Relacionamentos de navegação
+        public virtual Account Account { get; set; } = null!;
         public virtual Account? DestinationAccount { get; set; }
     }
 }

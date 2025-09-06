@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
 namespace SistemaBancario.Domain.Entities
@@ -8,9 +9,9 @@ namespace SistemaBancario.Domain.Entities
         public Guid PaymentMethodId { get; set; }
         
         [Required]
-        public string Name { get; set; } // "PIX", "Boleto", "TED"
+        public string Name { get; set; } = string.Empty; // "PIX", "TED", "DOC", "Saque", etc.
         
-        public string Description { get; set; }
+        public string Description { get; set; } = string.Empty;
         
         public decimal? Fee { get; set; } // Taxa da operação
         
@@ -21,6 +22,12 @@ namespace SistemaBancario.Domain.Entities
         public bool IsActive { get; set; } = true;
         
         public PaymentMethodType Type { get; set; }
+
+        // Relacionamento com AccountPaymentMethod (1:N)
+        public virtual ICollection<AccountPaymentMethod> AccountPaymentMethods { get; set; } = new List<AccountPaymentMethod>();
+
+        // Relacionamento com Transactions (1:N)
+        public virtual ICollection<Transactions> Transactions { get; set; } = new List<Transactions>();
     }
     
     public enum PaymentMethodType
@@ -29,6 +36,6 @@ namespace SistemaBancario.Domain.Entities
         BankTransfer,    // TED/DOC
         BankSlip,        // Boleto
         DebitCard,       // Cartão de débito
-        AutomaticDebit   // Débito automático
+        AutomaticDebit,  // Débito automático
     }
 }

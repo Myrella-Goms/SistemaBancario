@@ -4,7 +4,8 @@ namespace SistemaBancario.Domain.Entities
 {
     public class CheckingAccount : Account
     {
-        public double Taxes { get; set; }
-        public double Balance { get; set; }
+        public decimal Taxes { get; set; }
+        public decimal OverdraftLimit { get; set; }
+        public decimal OverdraftInterestRate { get; set; }
     }
 }

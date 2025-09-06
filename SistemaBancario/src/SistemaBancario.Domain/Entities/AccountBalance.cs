@@ -18,9 +18,9 @@ namespace SistemaBancario.Domain.Entities
         public decimal BlockedAmount { get; set; }
 
         [Required]
-        public DateTime LastUpdated { get; set; } = DateTime.Now();
+        public DateTime LastUpdated { get; set; } = DateTime.Now;
         
         // Navegação
-        public virtual Account Account { get; set; }
+        public virtual Account Account { get; set; } = null!;
     }
 }
