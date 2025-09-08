@@ -6,24 +6,18 @@ namespace SistemaBancario.Domain.Entities
 {
     public class Transactions
     {
-        public Guid TransactionId { get; set; }
-        
-        [Required]
-        public Guid AccountId { get; set; } 
-        
+        public Guid TransactionId { get; set; }   
         [Required]
         public decimal Amount { get; set; }
-        
         [Required]
-        public TransactionType Type { get; set; }
-        
-        public string? Description { get; set; }
-        
+        public TransactionType Type { get; set; }   
+        public string? Description { get; set; }        
         [Required]
-        public DateTime CreatedAt { get; set; } = DateTime.Now;
-        
+        public DateTime CreatedAt { get; set; } = DateTime.Now; 
+        [Required]
+        public Guid AccountId { get; set; }      
         public Guid? DestinationAccountId { get; set; }
-        public virtual Account Account { get; set; } = null!;
+        public virtual Account? Account { get; set; }
         public virtual Account? DestinationAccount { get; set; }
     }
 }
