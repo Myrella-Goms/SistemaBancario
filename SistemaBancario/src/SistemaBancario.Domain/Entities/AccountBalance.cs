@@ -1,5 +1,6 @@
 using System;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace SistemaBancario.Domain.Entities
 {
@@ -7,7 +8,7 @@ namespace SistemaBancario.Domain.Entities
     {
         public Guid AccountBalanceId { get; set; }
         
-        [Required]
+        [ForeignKey("Account")]
         public Guid AccountId { get; set; }
         
         [Required]
@@ -19,6 +20,6 @@ namespace SistemaBancario.Domain.Entities
 
         [Required]
         public DateTime LastUpdated { get; set; } = DateTime.Now;
-        public virtual Account Account { get; set; } = null!;
+        public virtual Account? Account { get; set; }
     }
 }
